@@ -1,0 +1,16 @@
+.header {
+    border-bottom: solid 1px #ddd7d7;
+}
+
+.headerContainer {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.inputSearch {
+    width: 300px;
+}

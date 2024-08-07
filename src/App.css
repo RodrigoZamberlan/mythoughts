@@ -1,0 +1,15 @@
+body, h1, h2, h3, p, span, label, input, textarea, button {
+    font-family: 'Inter', sans-serif;
+}
+
+.form-container {
+    width: 500px;
+    max-width: 95%;
+    margin: 30px auto;
+}
+
+.main-content {
+    width: 90%;
+    margin: auto;
+    padding-top: 30px;
+}
