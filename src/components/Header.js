@@ -1,8 +1,14 @@
 import styles from "./styles/Header.module.css";
 import Input from "./Input.js";
 import Button from "./Button.js";
+import { ModalContext } from "../contexts/ModalContext.js";
+import { PostContext } from "../contexts/PostContext.js";
+import { useContext } from "react";
 
-const Header = ({searchText, handleModal, handleSearchTextChange, handleSearchKeyDown}) => {
+const Header = () => {
+  const { searchText, handleSearchTextChange, handleSearchKeyDown } = useContext(PostContext);
+  const { handleModal } = useContext(ModalContext);
+
   return (
     <>
       <header className={styles.header}>
