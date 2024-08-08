@@ -36,13 +36,19 @@ const FormWritePost = () => {
 
   const buttonsWriteForm = [
     {
-      id: 'btnPublish',
-      text: 'Publish',
-      handleClick: handlePublishPost,
+      id: "btnPublish",
+      text: "Publish",
+      type: "Submit",
     },
   ];
 
-  return <Form fields={fieldsWriteForm} buttons={buttonsWriteForm} />
+  return (
+    <Form
+      fields={fieldsWriteForm}
+      buttons={buttonsWriteForm}
+      handleSubmit={handlePublishPost}
+    />
+  );
 };
 
 export default FormWritePost;

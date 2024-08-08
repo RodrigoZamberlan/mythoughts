@@ -18,9 +18,9 @@ function App() {
             </div>
           </Modal>
         </ModalProvider>
-        <ul className="main-content">
+        <div className="main-content">
           <ListOfPosts />
-        </ul>
+        </div>
       </PostProvider>
     </div>
   );

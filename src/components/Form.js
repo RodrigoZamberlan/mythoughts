@@ -3,10 +3,10 @@ import Input from "./Input";
 import Button from "./Button";
 import Textarea from "./Textarea";
 
-const Form = ({ fields, buttons }) => {
+const Form = ({ fields, buttons, handleSubmit }) => {
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           {fields.map((field, index) => (
             <div key={index} className={styles.containerField}>

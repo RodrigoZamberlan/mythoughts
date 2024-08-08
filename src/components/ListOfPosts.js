@@ -17,17 +17,20 @@ const ListOfPosts = () => {
 
   return (
     <>
-      {posts.map((post, index) => (
-        <li key={index} className={styles.postItem}>
-          <Post
-            title={post.titleInput}
-            content={post.contentInput}
-            handleRemovePost={() => {
-              handleRemovePost(index);
-            }}
-          />
-        </li>
-      ))}
+      {filteredListOfPosts.length > 0 && hasResults && <p>Showing {posts.length} {posts.length > 1 ? "results" : "result"}:</p>}
+      <ul class={styles.container}>
+        {hasResults && posts.map((post, index) => (
+          <li key={index} className={styles.postItem}>
+            <Post
+              title={post.titleInput}
+              content={post.contentInput}
+              handleRemovePost={() => {
+                handleRemovePost(index);
+              }}
+            />
+          </li>
+        ))}
+      </ul>
     </>
   );
 };

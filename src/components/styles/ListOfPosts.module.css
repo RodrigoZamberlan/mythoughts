@@ -1,3 +1,12 @@
+.container {
+    max-width: 90%;
+    width: 700px;
+    padding-left: 0;
+}
+
 .postItem {
     list-style-type: none;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd7d7;
+    padding-bottom: 20px;
 }

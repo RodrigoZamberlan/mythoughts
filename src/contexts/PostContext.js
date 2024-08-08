@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-export const PostContext = createContext();
+export const PostContext = createContext("");
 
 export const PostProvider = ({ children }) => {
   const [newPost, setNewPost] = useState({ titleInput: "", contentInput: "" });
@@ -44,7 +44,8 @@ export const PostProvider = ({ children }) => {
     }
   };
 
-  const handlePublishPost = () => {
+  const handlePublishPost = (event) => {
+    event.preventDefault();
     const post = JSON.parse(JSON.stringify(newPost));
     setListOfPosts((prevPosts) => [...prevPosts, post]);
     setNewPost({ titleInput: "", contentInput: "" });
