@@ -44,12 +44,10 @@ export const PostProvider = ({ children }) => {
     }
   };
 
-  const handlePublishPost = (event) => {
-    event.preventDefault();
-    const post = JSON.parse(JSON.stringify(newPost));
+  const addPostToList = (post) => {
     setListOfPosts((prevPosts) => [...prevPosts, post]);
     setNewPost({ titleInput: "", contentInput: "" });
-  };
+  }
 
   const handleRemovePost = (index) => {
     setListOfPosts((prevPosts) => prevPosts.filter((_, i) => i !== index));
@@ -66,7 +64,7 @@ export const PostProvider = ({ children }) => {
         handleNewPost,
         handleSearchTextChange,
         handleSearchKeyDown,
-        handlePublishPost,
+        addPostToList,
         handleRemovePost,
       }}
     >

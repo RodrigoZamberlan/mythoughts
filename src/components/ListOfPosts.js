@@ -18,7 +18,7 @@ const ListOfPosts = () => {
   return (
     <>
       {filteredListOfPosts.length > 0 && hasResults && <p>Showing {posts.length} {posts.length > 1 ? "results" : "result"}:</p>}
-      <ul class={styles.container}>
+      <ul className={styles.container}>
         {hasResults && posts.map((post, index) => (
           <li key={index} className={styles.postItem}>
             <Post

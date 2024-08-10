@@ -1,4 +1,5 @@
 import "./App.css";
+import Login from "./components/Login.js";
 import Header from "./components/Header.js";
 import Modal from "./components/Modal.js";
 import FormWritePost from "./components/FormWritePost.js";
@@ -7,9 +8,11 @@ import { PostProvider } from "./contexts/PostContext.js";
 import { ModalProvider } from "./contexts/ModalContext.js";
 
 function App() {
+  const isLoggedIn = true;
+
   return (
     <div className="App">
-      <PostProvider>
+      {isLoggedIn ? <PostProvider>
         <ModalProvider>
           <Header />
           <Modal>
@@ -21,7 +24,7 @@ function App() {
         <div className="main-content">
           <ListOfPosts />
         </div>
-      </PostProvider>
+      </PostProvider> : <Login/>}
     </div>
   );
 }

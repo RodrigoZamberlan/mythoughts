@@ -1,9 +1,19 @@
 import Form from "./Form";
 import { useContext } from "react";
 import { PostContext } from "../contexts/PostContext";
+import { ModalContext } from "../contexts/ModalContext";
 
 const FormWritePost = () => {
-  const { newPost, handleNewPost, handlePublishPost } = useContext(PostContext);
+  const { newPost, handleNewPost, addPostToList } = useContext(PostContext);
+  const { handleModal} = useContext(ModalContext);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const post = JSON.parse(JSON.stringify(newPost));
+    addPostToList(post);
+    handleModal();
+  }
+
   const fieldsWriteForm = [
     {
       tag: "input",
@@ -46,7 +56,7 @@ const FormWritePost = () => {
     <Form
       fields={fieldsWriteForm}
       buttons={buttonsWriteForm}
-      handleSubmit={handlePublishPost}
+      handleSubmit={handleSubmit}
     />
   );
 };
